@@ -3,7 +3,7 @@ FROM golang:1.22.0 as builder
 
 COPY . /go/src/github.com/maciej-gol/ping-exporter
 WORKDIR /go/src/github.com/maciej-gol/ping-exporter
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -o /out/ping-exporter .
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=arm go build -o /out/ping-exporter .
 
 FROM scratch
 
